@@ -1,38 +1,38 @@
 datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
 
 start = element bibliotheque { livre* & auteur*   }
-
-auteur = element auteur {
-   prenom & nom, pays, commentaire?, photo , attribute ident {xsd:ID}
-}
-
-prenom = element prenom {xsd:string}
-nom = element nom {xsd:string}
-pays = element pays { xsd:string} 
-photo = element photo {xsd:anyURI}
-
-livre = element livre{
-    attribute langue {xsd:string}, attribute auteurs {xsd:IDREFS},
-    titre, element annee{xsd:gYear}, prix, couverture?, commentaire? 
+commentaire = element commentaire {
+    xsd:string
 }
 
 couverture = element couverture {
     xsd:anyURI
 }
 
-commentaire = element commentaire {
-    xsd:string
-}
+
 titre = element titre {
-   xsd:string { maxlength = "50"}
+   xsd:string { maxLength = "50"}
 }
 
 prix = element prix {
-    xsd:double {
-        maxInclusive = "60"
-        minINclusive = "0"
-    }
-    attribute monnaie {
-        "CAD" |"USD" |"EURO"
-    }? 
+    xsd:double { maxInclusive = "60" minInclusive = "0"}, 
+    attribute monnaie {"CAD" |"USD" |"EURO"}?
 }
+
+photo = element photo {xsd:anyURI}
+livre = element livre{
+    attribute langue {xsd:string}, attribute auteurs {xsd:IDREFS},
+    titre, element annee{xsd:gYear}, prix, couverture?, commentaire? 
+}
+auteur = element auteur{
+    attribute ident {xsd:ID},
+   (prenom & nom), pays, commentaire?, photo  
+}
+
+prenom = element prenom {xsd:string}
+nom = element nom {xsd:string}
+pays = element pays {xsd:string} 
+
+
+
+
