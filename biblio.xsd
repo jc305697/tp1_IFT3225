@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"> 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:liv="livre" xmlns:aut="auteur" elementFormDefault="qualified"> 
     <xs:element name="bibliotheque" >
         <xs:complexType>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -17,9 +17,9 @@
                         <xs:maxLength value="50"/>
                     </xs:restriction></xs:simpleType>
             </xs:element>
-            <xs:element name="annnee" type="xs:gYear"/>
+            <xs:element name="annee" type="xs:gYear"/>
             <xs:element name="prix" type="prixType"/>
-            <xs:element name="couverture" type="xs:anyURI"/>
+            <xs:element name="couverture" type="xs:anyURI" minOccurs="0"/>
             <xs:element name="commentaire" type="typeCommentaire" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="langue" type="xs:string"/>
@@ -40,6 +40,7 @@
                 <xs:element name="photo" type="xs:anyURI"/>
             </xs:sequence>
         </xs:sequence>
+        <xs:attribute name="ident" type="xs:ID"/>
         
     </xs:complexType>
 
