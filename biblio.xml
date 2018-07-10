@@ -3,7 +3,7 @@
 <bibliotheque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="biblio.xsd">
 <!--bibliotheque-->
-    <livre langue="francais" auteurs="ADF">
+    <livre langue="francais" auteurs="ADF CDG">
         <titre> Les Trois Mousquetaires </titre>
         <annee> 1844 </annee>
         <prix monnaie="EURO"> 15 </prix>
@@ -11,7 +11,7 @@
         <commentaire> Ce livre a été adapté en films à plusieurs reprises. </commentaire>
     </livre>
 
-    <livre langue="anglais" auteurs="CDG">
+    <livre langue="anglais" auteurs="CDG ADF">
         <titre> A tale of Two Cities </titre>
         <annee> 1859 </annee>
         <prix monnaie="USD"> 10 </prix>
@@ -34,21 +34,21 @@
         <prix monnaie="EURO"> 20 </prix>
     </livre>
 
-    <livre langue="francais" auteurs="JVF">
+    <livre langue="francais" auteurs="JVF GGC">
         <titre> De la Terre à la Lune </titre>
         <annee> 1865 </annee>
         <prix monnaie="EURO"> 15 </prix>
         <commentaire> Sa couverture est un obus enfoncé dans la Lune. </commentaire>
     </livre>
 
-    <livre langue="francais" auteurs="GGC">
+    <livre langue="francais" auteurs="GGC JVF">
         <titre> Le Survenant </titre>
         <annee> 1945 </annee>
         <prix monnaie="CAD"> 10 </prix>
         <commentaire> Ce livre est un roman du terroir. </commentaire>
     </livre>
 
-    <livre langue="francais" auteurs="GGC">
+    <livre langue="francais" auteurs="GGC ADF">
         <titre> Marie-Didace </titre>
         <annee> 1947 </annee>
         <prix monnaie="CAD"> 8 </prix>
