@@ -18,28 +18,6 @@
                             Verne
                         </xsl:with-param>
                     </xsl:call-template>
-                    
-                    <xsl:choose>
-                        <!-- quand un auteur en paramètre -->
-                        <xsl:when test="$nomAuteur"> 
-                            <p><xsl:value-of select="prenom"/></p>
-                            <p><xsl:value-of select="nom"/></p>
-                            <p><xsl:value-of select="pays"/></p>
-                            <p><xsl:value-of select="commentaire"/></p>
-                            <p><xsl:value-of select="photo"/></p>
-                            //award[auteur=' $nomAuteur ']/titre
-                        </xsl:when>
-                        
-                        <!-- aucun auteur en paramètre: tous les auteurs et livres triés par prix croissant -->
-                        <xsl:otherwise>
-                            <p><xsl:value-of select="prenom"/></p>
-                            <p><xsl:value-of select="nom"/></p>
-                            <p><xsl:value-of select="pays"/></p>
-                            <p><xsl:value-of select="commentaire"/></p>
-                            <p><xsl:value-of select="photo"/></p>
-                            //award[auteur=' $nomAuteur ']/titre
-                        </xsl:otherwise>
-                    </xsl:choose>                
                 </xsl:for-each>
             </body>
         </html>
@@ -50,16 +28,95 @@
         <xsl:variable name="idAuteur">
             <xsl:value-of select="(/bibliotheque/auteur[nom=$nomAuteur])/@ident"/>
         </xsl:variable>
-        <p>
-            Ma variable est <xsl:value-of select="$idAuteur"/> <br/>
-        </p>
-        
-            <p>passe ici</p>
-            <xsl:for-each select="idref($idAuteur)">
+
+        <!--  <xsl:for-each select="idref($idAuteur)">
                 <p>
                     <xsl:value-of select="titre"/>
                 </p>
-            </xsl:for-each>    
+            </xsl:for-each> -->   
+        
+        <xsl:choose>
+            <!-- quand un auteur en paramètre -->
+            <xsl:when test="$nomAuteur != ' '"> 
+               <!-- <p><xsl:value-of select="prenom"/></p>
+                <p><xsl:value-of select="nom"/></p>
+                <p><xsl:value-of select="pays"/></p>
+                <p><xsl:value-of select="commentaire"/></p>
+                <p><xsl:value-of select="photo"/></p>
+                //award[auteur=' $nomAuteur ']/titre -->
+ 
+                    <table>
+                        <thead>
+                            <th>titre</th>
+                            <th>annee</th>
+                            <th>prix</th>
+                            <th>commentaire</th>
+                        </thead>
+                        <tbody>
+                      <xsl:for-each select="idref($idAuteur)">
+                            <tr>
+                                <td>
+                                    <xsl:value-of select="titre"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="annee"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="prix"/>
+                                </td>
+                                
+                                <td>
+                                    <xsl:value-of select="commentaire"/>
+                                </td>
+                            </tr>
+                      </xsl:for-each>
+                        </tbody>
+                        
+                    </table>
+                
+            </xsl:when>
+            
+            <!-- aucun auteur en paramètre: tous les auteurs et livres triés par prix croissant -->
+            <xsl:otherwise>
+                <p><xsl:value-of select="prenom"/></p>
+                <p><xsl:value-of select="nom"/></p>
+                <p><xsl:value-of select="pays"/></p>
+                <p><xsl:value-of select="commentaire"/></p>
+                <p><xsl:value-of select="photo"/></p>
+                //award[auteur=' $nomAuteur ']/titre
+             
+                <xsl:for-each select="bibliotheque/auteur">
+                    <table>
+                        <thead>
+                            <th>titre</th>
+                            <th>annee</th>
+                            <th>prix</th>
+                            <th>commentaire</th>
+                        </thead>
+                        <tbody>
+                            <xsl:for-each select="idref(@ident)">
+                                <tr>
+                                    <td>
+                                        <xsl:value-of select="titre"/>
+                                    </td>
+                                    <td>
+                                        <xsl:value-of select="annee"/>
+                                    </td>
+                                    <td>
+                                        <xsl:value-of select="prix"/>
+                                    </td>
+                                    
+                                    <td>
+                                        <xsl:value-of select="commentaire"/>
+                                    </td>
+                                </tr>
+                            </xsl:for-each>
+                        </tbody>
+                        
+                    </table>
+                </xsl:for-each>
+            </xsl:otherwise>
+        </xsl:choose>      
     </xsl:template>
      
 </xsl:stylesheet>
