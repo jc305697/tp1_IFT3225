@@ -5,9 +5,6 @@
     version="2.0">
     
     <xsl:template match="/">
-        
-        
-        
         <html>
             <head>
                 <title>
@@ -17,7 +14,9 @@
             <body>
                 <xsl:for-each select="//bibliotheque/auteur/nom">
                     <xsl:call-template name="tri_auteur">
-                        <xsl:with-param name="nomAuteur" select = "$nomAuteur" />
+                        <xsl:with-param name="nomAuteur" >
+                            Verne
+                        </xsl:with-param>
                     </xsl:call-template>
                     
                     <xsl:choose>
@@ -45,7 +44,7 @@
             </body>
         </html>
     </xsl:template> 
-    <xsl:template name="temp">
+    <xsl:template name="tri_auteur">
         <xsl:param name="nomAuteur"/>
         
         <xsl:variable name="idAuteur">
@@ -60,13 +59,7 @@
                 <p>
                     <xsl:value-of select="titre"/>
                 </p>
-            </xsl:for-each>
-        
+            </xsl:for-each>    
     </xsl:template>
-    
-    <xsl:template name = "tri_auteur" >
-        <xsl:param name = "nomAuteur" />
-        <xsl:value-of select = "$nomAuteur" />
-    </xsl:template>
-    
+     
 </xsl:stylesheet>
