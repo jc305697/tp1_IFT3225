@@ -6,7 +6,7 @@
     
     <xsl:template match="/">
         
-        <xsl:param name="nomAuteur" select="Verne"/>
+        
         
         <html>
             <head>
@@ -45,6 +45,24 @@
             </body>
         </html>
     </xsl:template> 
+    <xsl:template name="temp">
+        <xsl:param name="nomAuteur"/>
+        
+        <xsl:variable name="idAuteur">
+            <xsl:value-of select="(/bibliotheque/auteur[nom=$nomAuteur])/@ident"/>
+        </xsl:variable>
+        <p>
+            Ma variable est <xsl:value-of select="$idAuteur"/> <br/>
+        </p>
+        
+            <p>passe ici</p>
+            <xsl:for-each select="idref($idAuteur)">
+                <p>
+                    <xsl:value-of select="titre"/>
+                </p>
+            </xsl:for-each>
+        
+    </xsl:template>
     
     <xsl:template name = "tri_auteur" >
         <xsl:param name = "nomAuteur" />

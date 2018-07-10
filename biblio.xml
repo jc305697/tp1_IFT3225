@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="biblio.xsl"?>
 <!--?xml-model href="biblio.rnc" type="application/relax-ng-compact-syntax"?-->
+
 <bibliotheque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="biblio.xsd">
 <!--bibliotheque-->
-    <livre langue="francais" auteurs="ADF">
+    <livre langue="francais" auteurs="ADF GGC">
         <titre> Les Trois Mousquetaires </titre>
         <annee> 1844 </annee>
         <prix monnaie="EURO"> 15 </prix>
@@ -11,7 +13,7 @@
         <commentaire> Ce livre a été adapté en films à plusieurs reprises. </commentaire>
     </livre>
 
-    <livre langue="anglais" auteurs="CDG">
+    <livre langue="anglais" auteurs="CDG JVF">
         <titre> A tale of Two Cities </titre>
         <annee> 1859 </annee>
         <prix monnaie="USD"> 10 </prix>
@@ -19,7 +21,7 @@
         </couverture>
     </livre>
 
-    <livre langue="francais" auteurs="JVF">
+    <livre langue="francais" auteurs="JVF GGC">
         <titre>Vingt milles lieues sous les mers</titre>
         <annee> 1869 </annee>
         <prix monnaie="EURO"> 25 </prix>
@@ -28,20 +30,20 @@
         <commentaire> Ce livre a été adapté en dessins animés. </commentaire>
     </livre>
 
-    <livre langue="francais" auteurs="JVF">
+    <livre langue="francais" auteurs="JVF ADF">
         <titre> Voyage au centre de la Terre </titre>
         <annee> 1864 </annee>
         <prix monnaie="EURO"> 20 </prix>
     </livre>
 
-    <livre langue="francais" auteurs="JVF">
+    <livre langue="francais" auteurs="JVF CDG">
         <titre> De la Terre à la Lune </titre>
         <annee> 1865 </annee>
         <prix monnaie="EURO"> 15 </prix>
         <commentaire> Sa couverture est un obus enfoncé dans la Lune. </commentaire>
     </livre>
 
-    <livre langue="francais" auteurs="GGC">
+    <livre langue="francais" auteurs="GGC ADF">
         <titre> Le Survenant </titre>
         <annee> 1945 </annee>
         <prix monnaie="CAD"> 10 </prix>
@@ -85,7 +87,7 @@
     </auteur>
 
     <auteur ident="JVF">
-        <nom> Verne </nom>
+        <nom>Verne</nom>
         <prenom> Jules </prenom>
         <pays> France </pays>
         <commentaire> Son nom est mentionné par Doc Brown dans «Retour vers le Futur». </commentaire>

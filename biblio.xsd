@@ -31,8 +31,8 @@
         <xs:sequence>
             <xs:choice minOccurs="2" maxOccurs="2">
                 <!-- peut pas mettre un xs:all dans un xs:sequence -->
-                <xs:element name="nom" type="xs:string" minOccurs="1" maxOccurs="1"/>
-                <xs:element name="prenom" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="nom" type="xs:string"/>
+                <xs:element name="prenom" type="xs:string"/>
             </xs:choice>
             <xs:sequence>
                 <xs:element name="pays" type="xs:string"/>
