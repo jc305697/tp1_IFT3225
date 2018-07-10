@@ -15,17 +15,40 @@
                 </title>
             </head>
             <body>
-                <h1>
-                    <xsl:value-of select="//auteur"/>
-                </h1>
-                <p>
-                    <b>Auteur:</b>
-                    <xsl:value-of select="//auteur"/>
-                </p>
-
+                <xsl:for-each select="//bibliotheque/auteur/nom">
+                    <xsl:call-template name="tri_auteur">
+                        <xsl:with-param name="nomAuteur" select = "$nomAuteur" />
+                    </xsl:call-template>
+                    
+                    <xsl:choose>
+                        <!-- quand un auteur en paramètre -->
+                        <xsl:when test="$nomAuteur"> 
+                            <p><xsl:value-of select="prenom"/></p>
+                            <p><xsl:value-of select="nom"/></p>
+                            <p><xsl:value-of select="pays"/></p>
+                            <p><xsl:value-of select="commentaire"/></p>
+                            <p><xsl:value-of select="photo"/></p>
+                            //award[auteur=' $nomAuteur ']/titre
+                        </xsl:when>
+                        
+                        <!-- aucun auteur en paramètre: tous les auteurs et livres triés par prix croissant -->
+                        <xsl:otherwise>
+                            <p><xsl:value-of select="prenom"/></p>
+                            <p><xsl:value-of select="nom"/></p>
+                            <p><xsl:value-of select="pays"/></p>
+                            <p><xsl:value-of select="commentaire"/></p>
+                            <p><xsl:value-of select="photo"/></p>
+                            //award[auteur=' $nomAuteur ']/titre
+                        </xsl:otherwise>
+                    </xsl:choose>                
+                </xsl:for-each>
             </body>
         </html>
     </xsl:template> 
     
+    <xsl:template name = "tri_auteur" >
+        <xsl:param name = "nomAuteur" />
+        <xsl:value-of select = "$nomAuteur" />
+    </xsl:template>
     
 </xsl:stylesheet>
