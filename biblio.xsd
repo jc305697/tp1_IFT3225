@@ -37,7 +37,7 @@
             <xs:sequence>
                 <xs:element name="pays" type="xs:string"/>
                 <xs:element name="commentaire" type="typeCommentaire" minOccurs="0"/>
-                <xs:element name="photo" type="xs:anyURI" minOccurs="0"/>
+                <xs:element name="photo" type="xs:anyURI"/>
             </xs:sequence>
         </xs:sequence>
         <xs:attribute name="ident" type="xs:ID" use="required"/>

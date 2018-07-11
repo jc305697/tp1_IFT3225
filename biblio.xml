@@ -60,7 +60,6 @@
         <prenom>Alexandre</prenom>
         <pays> France </pays>
         <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Alexander_Dumas_père_par_Nadar_-_Google_Art_Project.jpg/260px-Alexander_Dumas_père_par_Nadar_-_Google_Art_Project.jpg</photo>
-    
     </auteur>
 
     <auteur ident="CDG">
@@ -75,6 +74,7 @@
         <nom>Guèvremont</nom>
         <pays> Canada </pays>
         <commentaire> Elle est connue surtout pour son roman «Le Survenant». </commentaire>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Germaine_Guevremont.jpg/220px-Germaine_Guevremont.jpg</photo>
     </auteur>
 
     <auteur ident="JVF">

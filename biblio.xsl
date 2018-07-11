@@ -60,7 +60,7 @@
                 </xsl:if>
                 <h3>Origine</h3>
                 <p>
-                    Cet auteur est originaire de <xsl:value-of select="//auteur[@ident=$idAuteur]/pays"/>
+                    Cet auteur est originaire de <xsl:value-of select="//auteur[@ident=$idAuteur]/pays"/>.
                 </p>
                 
                 <xsl:if test="boolean(//auteur[@ident=$idAuteur]/commentaire)">
