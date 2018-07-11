@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="biblio.xsl"?>
-<!--?xml-model href="biblio.rnc" type="application/relax-ng-compact-syntax"?-->
+<?xml-model href="biblio.rnc" type="application/relax-ng-compact-syntax"?>
 
 <!--<bibliotheque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="biblio.xsd">-->
@@ -70,7 +70,7 @@
     </auteur>
 
     <auteur ident="GGC">
-        <prenom> Germaine </prenom>
+        <prenom> Germaine</prenom>
         <nom>Guèvremont</nom>
         <pays> Canada </pays>
         <commentaire> Elle est connue surtout pour son roman «Le Survenant». </commentaire>
@@ -79,7 +79,7 @@
 
     <auteur ident="JVF">
         <nom>Verne</nom>
-        <prenom> Jules </prenom>
+        <prenom>Jules</prenom>
         <pays> France </pays>
         <commentaire> Son nom est mentionné par Doc Brown dans «Retour vers le Futur». </commentaire>
         <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg/220px-Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg</photo>

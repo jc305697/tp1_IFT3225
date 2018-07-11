@@ -22,7 +22,7 @@
                     
                 </p> -->
                     <xsl:call-template name="tri_auteur">
-                        <xsl:with-param name="nomAuteur"></xsl:with-param> 
+                        <xsl:with-param name="nomAuteur">    </xsl:with-param> 
                     </xsl:call-template>
                 <!--/xsl:for-each -->
             </body>
@@ -43,10 +43,10 @@
             <xsl:when test="$nomAuteur != '' "> 
                 <xsl:variable name="idAuteur">
                     <!--xsl:value-of select="(/bibliotheque/auteur[nom=$nomAuteur])/@ident"/-->
-                    <xsl:value-of select="(//auteur[nom=$nomAuteur])/@ident"/>
+                    <xsl:value-of select="(//auteur[nom=normalize-space($nomAuteur)])/@ident"/>
                 </xsl:variable>
              
-                <h2> <xsl:value-of select="//auteur[@ident=$idAuteur]/prenom"/> <xsl:value-of select="//auteur[@ident=$idAuteur]/nom"/> </h2>
+                <h2> <xsl:value-of select="//auteur[@ident=$idAuteur]/prenom"/>  &#160; <xsl:value-of select="//auteur[@ident=$idAuteur]/nom"/> </h2>
                 <xsl:if test="boolean(//auteur[@ident=$idAuteur]/photo)">
                     <h3>Photo</h3>
                     <img>
@@ -160,7 +160,7 @@
                         <xsl:value-of select="@ident"/>
                     </xsl:variable>
                     
-                    <h2> test <xsl:value-of select="prenom"/> <xsl:value-of select="nom"/> </h2>
+                    <h2><xsl:value-of select="prenom"/> &#160;<xsl:value-of select="nom"/></h2>
                     
                     <xsl:if test="boolean(photo)">
                         <h3>Photo</h3>
