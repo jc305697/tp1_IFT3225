@@ -22,7 +22,7 @@
                     
                 </p> -->
                     <xsl:call-template name="tri_auteur">
-                        <xsl:with-param name="nomAuteur">Verne</xsl:with-param> 
+                        <xsl:with-param name="nomAuteur"></xsl:with-param> 
                     </xsl:call-template>
                 <!--/xsl:for-each -->
             </body>
@@ -40,7 +40,7 @@
         
         <xsl:choose>
             <!-- quand un auteur en paramètre -->
-            <xsl:when test="$nomAuteur != ' '"> 
+            <xsl:when test="$nomAuteur != '' "> 
                 <xsl:variable name="idAuteur">
                     <!--xsl:value-of select="(/bibliotheque/auteur[nom=$nomAuteur])/@ident"/-->
                     <xsl:value-of select="(//auteur[nom=$nomAuteur])/@ident"/>
@@ -58,7 +58,7 @@
                     </img>
                     
                 </xsl:if>
-                <h3>Origine</h3>
+                <h3>Origine de l'auteur</h3>
                 <p>
                     Cet auteur est originaire de <xsl:value-of select="//auteur[@ident=$idAuteur]/pays"/>.
                 </p>
