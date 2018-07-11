@@ -22,7 +22,7 @@
                     
                 </p> -->
                     <xsl:call-template name="tri_auteur">
-                        <xsl:with-param name="nomAuteur">Verne</xsl:with-param>
+                        <xsl:with-param name="nomAuteur">Verne</xsl:with-param> 
                     </xsl:call-template>
                 <!--/xsl:for-each -->
             </body>
@@ -154,18 +154,37 @@
             <!-- aucun auteur en paramètre: tous les auteurs et livres triés par prix croissant -->
             <xsl:otherwise>
                 <xsl:for-each select="/bibliotheque/auteur">
-                    <p><xsl:value-of select="prenom"/></p>
-                    <p><xsl:value-of select="nom"/></p>
-                    <p><xsl:value-of select="pays"/></p>
-                    <p><xsl:value-of select="commentaire"/></p>
-                    <p><xsl:value-of select="photo"/></p>
-                    //award[auteur=' $nomAuteur ']/titre
-                
-                
+            
                     <xsl:variable name="idAuteur">
                         <!--xsl:value-of select="(/bibliotheque/auteur[nom=$nomAuteur])/@ident"/-->
                         <xsl:value-of select="@ident"/>
                     </xsl:variable>
+                    
+                    <h2> test <xsl:value-of select="prenom"/> <xsl:value-of select="nom"/> </h2>
+                    
+                    <xsl:if test="boolean(photo)">
+                        <h3>Photo</h3>
+                        <img>
+                            <xsl:attribute name="src"><xsl:value-of select="photo"/></xsl:attribute>
+                            <xsl:attribute name="alt">photo de 
+                                <xsl:value-of select="prenom"/> 
+                                <xsl:value-of select="nom"/>
+                            </xsl:attribute>
+                        </img>
+                        
+                    </xsl:if>
+                    
+                    <h3>Origine</h3>
+                    <p>
+                        Cet auteur est originaire de <xsl:value-of select="pays"/>
+                    </p>
+                    
+                    <xsl:if test="boolean(commentaire)">
+                        <h3>Informations supplémentaire</h3>
+                        <p>
+                            <xsl:value-of select="commentaire"/>
+                        </p>
+                    </xsl:if>
                     
                     <table>
                         <thead>
