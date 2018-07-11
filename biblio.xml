@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="biblio.xsl"?>
+<!--?xml-stylesheet type="text/xsl" href="biblio.xsl"?-->
+<?xml-stylesheet type="text/xsl" href="biblioPrix.xsl"?>
 <?xml-model href="biblio.rnc" type="application/relax-ng-compact-syntax"?>
 
 <!--<bibliotheque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -20,6 +21,12 @@
         <couverture>https://upload.wikimedia.org/wikipedia/commons/3/3c/Tales_serial.jpg</couverture>
     </livre>
 
+    <livre langue="francais" auteurs="JVF ADF">
+        <titre>Voyage au centre de la Terre</titre>
+        <annee> 1864 </annee>
+        <prix monnaie="EURO"> 20 </prix>
+    </livre>
+    
     <livre langue="francais" auteurs="JVF GGC">
         <titre>Vingt milles lieues sous les mers</titre>
         <annee> 1869 </annee>
@@ -27,21 +34,15 @@
         <couverture>https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg/800px-Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg</couverture>
         <commentaire> Ce livre a été adapté en dessins animés. </commentaire>
     </livre>
-
-    <livre langue="francais" auteurs="JVF ADF">
-        <titre>Voyage au centre de la Terre</titre>
-        <annee> 1864 </annee>
-        <prix monnaie="EURO"> 20 </prix>
-    </livre>
-
-    <livre langue="francais" auteurs="JVF GGC">
+    
+    <livre langue="francais" auteurs="GGC JVF">
         <titre>De la Terre à la Lune</titre>
         <annee> 1865 </annee>
         <prix monnaie="EURO"> 15 </prix>
         <commentaire> Sa couverture est un obus enfoncé dans la Lune. </commentaire>
     </livre>
 
-    <livre langue="francais" auteurs="GGC JVF">
+    <livre langue="francais" auteurs="JVF GGC">
         <titre>Le Survenant</titre>
         <annee> 1945 </annee>
         <prix monnaie="CAD"> 10 </prix>
@@ -54,7 +55,15 @@
         <prix> 8 </prix>
         <commentaire> Ce livre est la suite du Survenant. </commentaire>
     </livre>
-
+    
+    <auteur ident="JVF">
+        <nom>Berne</nom>
+        <prenom>Jules</prenom>
+        <pays> France </pays>
+        <commentaire> Son nom est mentionné par Doc Brown dans «Retour vers le Futur». </commentaire>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg/220px-Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg</photo>
+    </auteur>
+    
     <auteur ident="ADF">
         <nom>Dumas</nom>
         <prenom>Alexandre</prenom>
@@ -75,14 +84,6 @@
         <pays> Canada </pays>
         <commentaire> Elle est connue surtout pour son roman «Le Survenant». </commentaire>
         <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Germaine_Guevremont.jpg/220px-Germaine_Guevremont.jpg</photo>
-    </auteur>
-
-    <auteur ident="JVF">
-        <nom>Verne</nom>
-        <prenom>Jules</prenom>
-        <pays> France </pays>
-        <commentaire> Son nom est mentionné par Doc Brown dans «Retour vers le Futur». </commentaire>
-        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg/220px-Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg</photo>
     </auteur>
 
 </bibliotheque>
