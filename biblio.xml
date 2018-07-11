@@ -35,7 +35,7 @@
         <commentaire> Ce livre a été adapté en dessins animés. </commentaire>
     </livre>
     
-    <livre langue="francais" auteurs="GGC JVF">
+    <livre langue="francais" auteurs="JVF">
         <titre>De la Terre à la Lune</titre>
         <annee> 1865 </annee>
         <prix monnaie="EURO"> 15 </prix>
@@ -57,7 +57,7 @@
     </livre>
     
     <auteur ident="JVF">
-        <nom>Berne</nom>
+        <nom>Verne</nom>
         <prenom>Jules</prenom>
         <pays> France </pays>
         <commentaire> Son nom est mentionné par Doc Brown dans «Retour vers le Futur». </commentaire>

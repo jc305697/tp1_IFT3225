@@ -61,7 +61,7 @@
                         <!--tbody-->
            
                         <xsl:for-each select="/bibliotheque/livre">
-                            <xsl:sort select="//(auteur[@ident=substring-before(current()/@auteurs,' ')])/nom" data-type="text" order="descending" />
+                            <xsl:sort select="//(auteur[@ident=substring-before(current()/@auteurs,' ') or (not(contains(current()/@auteurs,' ')) and normalize-space(@ident)=normalize-space(current()/@auteurs))])/nom" data-type="text" order="descending" />
                             <xsl:variable name="valAuteurs"><xsl:value-of select="@auteurs"/></xsl:variable>
                             <xsl:variable name="prixLiv">
                                 <xsl:value-of select="number(prix)"/>
