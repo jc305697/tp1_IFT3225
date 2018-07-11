@@ -22,8 +22,8 @@
             <xs:element name="couverture" type="xs:anyURI" minOccurs="0"/>
             <xs:element name="commentaire" type="typeCommentaire" minOccurs="0"/>
         </xs:sequence>
-        <xs:attribute name="langue" type="xs:string"/>
-        <xs:attribute name="auteurs" type="xs:IDREFS"/>
+        <xs:attribute name="langue" type="xs:string" use="required"/>
+        <xs:attribute name="auteurs" type="xs:IDREFS" use="required"/>
         
     </xs:complexType>
     
@@ -37,10 +37,10 @@
             <xs:sequence>
                 <xs:element name="pays" type="xs:string"/>
                 <xs:element name="commentaire" type="typeCommentaire" minOccurs="0"/>
-                <xs:element name="photo" type="xs:anyURI"/>
+                <xs:element name="photo" type="xs:anyURI" minOccurs="0"/>
             </xs:sequence>
         </xs:sequence>
-        <xs:attribute name="ident" type="xs:ID"/>
+        <xs:attribute name="ident" type="xs:ID" use="required"/>
         
     </xs:complexType>
 
@@ -52,7 +52,7 @@
     <xs:complexType name="prixType">
         <xs:simpleContent>
             <xs:extension base="intervallePrix">
-                <xs:attribute name="monnaie" type="typeMonnaie"/>
+                <xs:attribute name="monnaie" type="typeMonnaie" use="optional"/>
             </xs:extension>       
         </xs:simpleContent>
     </xs:complexType>

@@ -6,27 +6,25 @@
     xsi:noNamespaceSchemaLocation="biblio.xsd">
 <!--bibliotheque-->
     <livre langue="francais" auteurs="ADF CDG">
-        <titre> Les Trois Mousquetaires </titre>
+        <titre>Les Trois Mousquetaires</titre>
         <annee> 1844 </annee>
         <prix monnaie="EURO"> 15 </prix>
-        <couverture> https://fr.wikipedia.org/wiki/Les_Trois_Mousquetaires#/media/File:Dartagnan-musketeers.jpg </couverture>
-        <commentaire> Ce livre a été adapté en films à plusieurs reprises. </commentaire>
+        <couverture>https://upload.wikimedia.org/wikipedia/commons/a/af/Three_Musketeers-1933-001.png</couverture>
+        <commentaire>Ce livre a été adapté en films à plusieurs reprises.</commentaire>
     </livre>
 
     <livre langue="anglais" auteurs="CDG ADF">
-        <titre> A tale of Two Cities </titre>
+        <titre>A tale of Two Cities</titre>
         <annee> 1859 </annee>
         <prix monnaie="USD"> 10 </prix>
-        <couverture> https://upload.wikimedia.org/wikipedia/commons/3/3c/Tales_serial.jpg
-        </couverture>
+        <couverture>https://upload.wikimedia.org/wikipedia/commons/3/3c/Tales_serial.jpg</couverture>
     </livre>
 
     <livre langue="francais" auteurs="JVF GGC">
         <titre>Vingt milles lieues sous les mers</titre>
         <annee> 1869 </annee>
         <prix monnaie="EURO"> 25 </prix>
-        <couverture>
-            https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg/800px-Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg </couverture>
+        <couverture>https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg/800px-Houghton_FC8_V5946_869ve_-_Verne%2C_frontispiece.jpg</couverture>
         <commentaire> Ce livre a été adapté en dessins animés. </commentaire>
     </livre>
 
@@ -53,7 +51,7 @@
     <livre langue="francais" auteurs="GGC ADF">
         <titre> Marie-Didace </titre>
         <annee> 1947 </annee>
-        <prix monnaie="CAD"> 8 </prix>
+        <prix> 8 </prix>
         <commentaire> Ce livre est la suite du Survenant. </commentaire>
     </livre>
 
@@ -61,19 +59,15 @@
         <nom>Dumas</nom>
         <prenom> Alexandre </prenom>
         <pays> France </pays>
-        <photo>
-            https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Alexander_Dumas_père_par_Nadar_-_Google_Art_Project.jpg/260px-Alexander_Dumas_père_par_Nadar_-_Google_Art_Project.jpg
-        </photo>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Alexander_Dumas_père_par_Nadar_-_Google_Art_Project.jpg/260px-Alexander_Dumas_père_par_Nadar_-_Google_Art_Project.jpg</photo>
+    
     </auteur>
 
     <auteur ident="CDG">
         <nom>Dickens</nom>
         <prenom> Charles </prenom>
         <pays> Grande-Bretagne </pays>
-        <commentaire> C'est un auteur anglais. </commentaire>
-        <photo>
-            https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Dickens_Gurney_head.jpg/220px-Dickens_Gurney_head.jpg
-        </photo>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Dickens_Gurney_head.jpg/220px-Dickens_Gurney_head.jpg</photo>
     </auteur>
 
     <auteur ident="GGC">
@@ -81,9 +75,6 @@
         <nom>Guèvremont</nom>
         <pays> Canada </pays>
         <commentaire> Elle est connue surtout pour son roman «Le Survenant». </commentaire>
-        <photo>
-            https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Germaine_Guevremont.jpg/220px-Germaine_Guevremont.jpg
-        </photo>
     </auteur>
 
     <auteur ident="JVF">
@@ -91,9 +82,7 @@
         <prenom> Jules </prenom>
         <pays> France </pays>
         <commentaire> Son nom est mentionné par Doc Brown dans «Retour vers le Futur». </commentaire>
-        <photo>
-            https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg/220px-Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg
-        </photo>
+        <photo>https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg/220px-Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg</photo>
     </auteur>
 
 </bibliotheque>

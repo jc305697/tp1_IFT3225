@@ -26,7 +26,7 @@ livre = element livre{
 }
 auteur = element auteur{
     attribute ident {xsd:ID},
-   (prenom & nom), pays, commentaire?, photo  
+   (prenom & nom), pays, commentaire?, photo?  
 }
 
 prenom = element prenom {xsd:string}
