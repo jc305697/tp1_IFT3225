@@ -58,7 +58,7 @@
     </livre>
 
     <auteur ident="ADF">
-        <nom> Dumas </nom>
+        <nom>Dumas</nom>
         <prenom> Alexandre </prenom>
         <pays> France </pays>
         <photo>
@@ -67,7 +67,7 @@
     </auteur>
 
     <auteur ident="CDG">
-        <nom> Dickens </nom>
+        <nom>Dickens</nom>
         <prenom> Charles </prenom>
         <pays> Grande-Bretagne </pays>
         <commentaire> C'est un auteur anglais. </commentaire>
@@ -78,7 +78,7 @@
 
     <auteur ident="GGC">
         <prenom> Germaine </prenom>
-        <nom> Guèvremont </nom>
+        <nom>Guèvremont</nom>
         <pays> Canada </pays>
         <commentaire> Elle est connue surtout pour son roman «Le Survenant». </commentaire>
         <photo>

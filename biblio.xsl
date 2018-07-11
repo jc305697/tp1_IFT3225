@@ -12,13 +12,15 @@
                 </title>
             </head>
             <body>
-                <xsl:for-each select="//bibliotheque/auteur/nom">
+                <!--xsl:for-each select="//bibliotheque/auteur/nom" -->
+               <!-- <p>
+                    mon identiant de auteur est <xsl:value-of select="//auteur[nom='Dumas']/@ident"/>
+                    
+                </p> -->
                     <xsl:call-template name="tri_auteur">
-                        <xsl:with-param name="nomAuteur" >
-                            Verne
-                        </xsl:with-param>
+                        <xsl:with-param name="nomAuteur">Verne</xsl:with-param>
                     </xsl:call-template>
-                </xsl:for-each>
+                <!--/xsl:for-each -->
             </body>
         </html>
     </xsl:template> 
@@ -26,7 +28,8 @@
         <xsl:param name="nomAuteur"/>
         
         <xsl:variable name="idAuteur">
-            <xsl:value-of select="(/bibliotheque/auteur[nom=$nomAuteur])/@ident"/>
+            <!--xsl:value-of select="(/bibliotheque/auteur[nom=$nomAuteur])/@ident"/-->
+            <xsl:value-of select="(//auteur[nom=$nomAuteur])/@ident"/>
         </xsl:variable>
 
         <!--  <xsl:for-each select="idref($idAuteur)">
@@ -38,39 +41,52 @@
         <xsl:choose>
             <!-- quand un auteur en paramètre -->
             <xsl:when test="$nomAuteur != ' '"> 
-               <!-- <p><xsl:value-of select="prenom"/></p>
-                <p><xsl:value-of select="nom"/></p>
-                <p><xsl:value-of select="pays"/></p>
-                <p><xsl:value-of select="commentaire"/></p>
-                <p><xsl:value-of select="photo"/></p>
-                //award[auteur=' $nomAuteur ']/titre -->
- 
+        
+               <!-- <p>
+                    
+                    mon identiant de auteur est <xsl:value-of select="//auteur[nom=string($nomAuteur)]/@ident"/> <br/>
+                    mon identifiant de auteur fixe est <xsl:value-of select="//auteur[nom='Dumas']/@ident"/>
+                </p> -->
                     <table>
-                        <thead>
+                        <!--thead-->
                             <th>titre</th>
                             <th>annee</th>
                             <th>prix</th>
                             <th>commentaire</th>
-                        </thead>
-                        <tbody>
-                      <xsl:for-each select="idref($idAuteur)">
-                            <tr>
-                                <td>
-                                    <xsl:value-of select="titre"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="annee"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="prix"/>
-                                </td>
-                                
-                                <td>
-                                    <xsl:value-of select="commentaire"/>
-                                </td>
-                            </tr>
+                        <!--/thead-->
+                        <!--tbody-->
+                        
+                        <xsl:for-each select="/bibliotheque/livre">
+                          <xsl:variable name="test">
+                              <xsl:value-of select="contains(@auteurs,$idAuteur)"/>
+                          </xsl:variable>
+                          
+                          <p>
+                                ma condition est <xsl:value-of select="$test"/>
+                          </p>
+                          
+                              <xsl:if test="contains(@auteurs,$idAuteur)">
+                                  <tr>
+                                      <td>
+                                          <xsl:value-of select="titre"/>
+                                      </td>
+                                      <td>
+                                          <xsl:value-of select="annee"/>
+                                      </td>
+                                      <td>
+                                          <xsl:value-of select="prix"/>
+                                      </td>
+                                      
+                                      <td>
+                                          <xsl:value-of select="commentaire"/>
+                                      </td>
+                                  </tr>
+                              </xsl:if>
+                              
+                          
+                          
                       </xsl:for-each>
-                        </tbody>
+                        <!--/tbody-->
                         
                     </table>
                 
