@@ -16,7 +16,7 @@ titre = element titre {
 
 prix = element prix {
     xsd:double { maxInclusive = "60" minInclusive = "0"}, 
-    attribute monnaie {"CAD" |"USD" |"EURO"}?
+    attribute monnaie {"CAD" |"USD" |"EURO" |"AUD" |"JPY" |"BSD" |"DZD"}?
 }
 
 photo = element photo {xsd:anyURI}

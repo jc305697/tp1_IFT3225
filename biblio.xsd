@@ -70,6 +70,10 @@
             <xs:enumeration value="CAD"/>
             <xs:enumeration value="USD"/>
             <xs:enumeration value="EURO"/>
+            <xs:enumeration value="AUD"/>
+            <xs:enumeration value="JPY"/>
+            <xs:enumeration value="BSD"/>
+            <xs:enumeration value="DZD"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>
