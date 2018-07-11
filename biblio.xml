@@ -2,9 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="biblio.xsl"?>
 <!--?xml-model href="biblio.rnc" type="application/relax-ng-compact-syntax"?-->
 
-<bibliotheque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="biblio.xsd">
-<!--bibliotheque-->
+<!--<bibliotheque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="biblio.xsd">-->
+<bibliotheque>
     <livre langue="francais" auteurs="ADF CDG">
         <titre>Les Trois Mousquetaires</titre>
         <annee> 1844 </annee>
