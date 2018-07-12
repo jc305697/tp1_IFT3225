@@ -48,14 +48,14 @@
                     </p>
                 </xsl:for-each> 
 -->
-            <table>
+            <table border="1">
                 <!-- thead -->
-                <th>titre</th>
-                <th>annee</th>
-                <th>prix</th>
-                <th>auteurs</th>
-                <th>commentaire</th>
-                <th>couverture</th>
+                <th bgcolor="#00cc00">titre</th>
+                <th bgcolor="#00cc00">annee</th>
+                <th bgcolor="#00cc00">prix</th>
+                <th bgcolor="#00cc00">auteurs</th>
+                <th bgcolor="#00cc00">commentaire</th>
+                <th bgcolor="#00cc00">couverture</th>
                 <!-- /thead -->
                 <!-- tbody -->
                 <xsl:for-each select="/bibliotheque/livre">
@@ -68,20 +68,20 @@
                     </xsl:variable>
                     <xsl:if test="not($prixLiv > $max) and not($min > $prixLiv)">
                         <tr>
-                            <td>
+                            <td bgcolor="#cccc00">
                                 <xsl:value-of select="titre"/>
                             </td>
-                            <td>
+                            <td bgcolor="#ffffcc">
                                 <xsl:value-of select="annee"/>
                             </td>
-                            <td>
+                            <td bgcolor="#ffffcc">
                                 <xsl:value-of select="$prixLiv"/>
                                 <xsl:if test="boolean(prix/@monnaie)">
                                     &#160;
                                     <xsl:value-of select="prix/@monnaie"/>
                                 </xsl:if>
                             </td>
-                            <td>
+                            <td bgcolor="#ffffcc">
                                 <ul>
                                     <xsl:for-each select="/bibliotheque/auteur">
                                         <xsl:sort select="nom" data-type="text" order="descending"/>
@@ -95,10 +95,10 @@
                                     </xsl:for-each>
                                 </ul>
                             </td>
-                            <td>
+                            <td bgcolor="#ffffcc">
                                 <xsl:value-of select="commentaire"/>
                             </td>
-                            <td>
+                            <td bgcolor="#ffffcc">
                                 <xsl:if test="boolean(couverture)">
                                     <img>
                                         <xsl:attribute name="src">

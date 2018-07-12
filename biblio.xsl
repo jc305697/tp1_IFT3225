@@ -22,7 +22,7 @@
                     
                 </p> -->
                     <xsl:call-template name="tri_auteur">
-                        <xsl:with-param name="nomAuteur">Verne</xsl:with-param> 
+                        <xsl:with-param name="nomAuteur">Dumas</xsl:with-param> 
                     </xsl:call-template>
                 <!--/xsl:for-each -->
             </body>
@@ -75,14 +75,14 @@
                     mon identifiant de auteur fixe est <xsl:value-of select="//auteur[nom='Dumas']/@ident"/>
                 </p> -->
                 <h3>Livres publiés par cet auteur</h3>
-                    <table>
+                    <table border="1">
                         <!--thead-->
-                            <th>titre</th>
-                            <th>annee</th>
-                            <th>prix</th>
-                            <th>auteurs</th>
-                            <th>commentaire</th>
-                            <th>couverture</th>
+                            <th bgcolor="#00cc00">titre</th>
+                            <th bgcolor="#00cc00">annee</th>
+                            <th bgcolor="#00cc00">prix</th>
+                            <th bgcolor="#00cc00">auteurs</th>
+                            <th bgcolor="#00cc00">commentaire</th>
+                            <th bgcolor="#00cc00">couverture</th>
                         
                         <!--/thead-->
                         <!--tbody-->
@@ -99,19 +99,19 @@
                           
                               <xsl:if test="contains(@auteurs,$idAuteur)">
                                   <tr>
-                                      <td>
+                                      <td bgcolor="#cccc00">
                                           <xsl:value-of select="titre"/>
                                       </td>
-                                      <td>
+                                      <td bgcolor="ffffcc">
                                           <xsl:value-of select="annee"/>
                                       </td>
-                                      <td>
+                                      <td bgcolor="ffffcc">
                                           <xsl:value-of select="prix"/> <xsl:if test="boolean(prix/@monnaie)">
                                               <xsl:value-of select="prix/@monnaie"/>
                                           </xsl:if>
                                       </td>
                                       
-                                      <td>
+                                      <td bgcolor="ffffcc">
                                           <ul>
                                               <xsl:for-each select="/bibliotheque/auteur">
                                                   <xsl:if test="contains($valAuteurs,@ident)">
@@ -121,11 +121,11 @@
                                           </ul>    
                                       </td>
                                       
-                                      <td>
+                                      <td bgcolor="ffffcc">
                                           <xsl:value-of select="commentaire"/>
                                       </td>
                                       
-                                      <td>
+                                      <td bgcolor="ffffcc">
                                           <xsl:if test="boolean(couverture)">
                                              <img>
                                                  <xsl:attribute name="src">
@@ -182,14 +182,14 @@
                         </p>
                     </xsl:if>
                     
-                    <table>
+                    <table border="1">
                         <thead>
-                            <th>titre</th>
-                            <th>annee</th>
-                            <th>prix</th>
-                            <th>auteurs</th>
-                            <th>commentaire</th>
-                            <th>couverture</th>
+                            <th bgcolor="#00cc00">titre</th>
+                            <th bgcolor="#00cc00">annee</th>
+                            <th bgcolor="#00cc00">prix</th>
+                            <th bgcolor="#00cc00">auteurs</th>
+                            <th bgcolor="#00cc00">commentaire</th>
+                            <th bgcolor="#00cc00">couverture</th>
                         </thead>
                         <tbody>
                             <xsl:for-each select="/bibliotheque/livre">
@@ -197,19 +197,19 @@
                                 <xsl:variable name="valAuteurs"><xsl:value-of select="@auteurs"/></xsl:variable>
                                 <xsl:if test="contains(@auteurs,$idAuteur)">
                                      <tr>
-                                         <td>
+                                         <td bgcolor="#cccc00">
                                              <xsl:value-of select="titre"/>
                                          </td>
-                                         <td>
+                                         <td bgcolor="ffffcc">
                                              <xsl:value-of select="annee"/>
                                          </td>
-                                         <td>
+                                         <td bgcolor="ffffcc">
                                              <xsl:value-of select="prix"/> <xsl:if test="boolean(prix/@monnaie)">
                                                  <xsl:value-of select="prix/@monnaie"/>
                                              </xsl:if>
                                          </td>
                                          
-                                         <td>
+                                         <td bgcolor="ffffcc">
                                              <ul>
                                                  <xsl:for-each select="/bibliotheque/auteur">
                                                      <xsl:if test="contains($valAuteurs,@ident)">
@@ -219,11 +219,11 @@
                                              </ul>    
                                          </td>
                                          
-                                         <td>
+                                         <td bgcolor="ffffcc">
                                              <xsl:value-of select="commentaire"/>
                                          </td>
                                          
-                                         <td>
+                                         <td bgcolor="ffffcc">
                                              <xsl:if test="boolean(couverture)">
                                                 <img>
                                                     <xsl:attribute name="src">
