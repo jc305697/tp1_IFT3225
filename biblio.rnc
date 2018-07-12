@@ -1,5 +1,5 @@
 datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
-
+# Charles-Frédéric Amringer et Jérémy Coulombe
 start = element bibliotheque { livre* & auteur*   }
 commentaire = element commentaire {
     xsd:string

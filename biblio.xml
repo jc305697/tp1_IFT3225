@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Charles-Frédéric Amringer et Jérémy Coulombe-->
 <!--?xml-stylesheet type="text/xsl" href="biblio.xsl"?-->
 <?xml-stylesheet type="text/xsl" href="biblioPrix.xsl"?>
 <?xml-model href="biblio.rnc" type="application/relax-ng-compact-syntax"?>

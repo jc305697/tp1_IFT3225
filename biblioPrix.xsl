@@ -1,9 +1,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
     <xsl:output method="html" encoding="UTF-8" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+    <!--Charles-Frédéric Amringer et Jérémy Coulombe-->    
     <xsl:template match="/">
         <html>
             <head>
-                <title> Information sur les auteurs </title>
+                <title> Information sur les livres </title>
             </head>
             <body>
                 <!-- xsl:for-each select="//bibliotheque/auteur/nom"  -->
