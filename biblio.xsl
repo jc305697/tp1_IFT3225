@@ -22,7 +22,7 @@
                     
                 </p> -->
                     <xsl:call-template name="tri_auteur">
-                        <xsl:with-param name="nomAuteur">    </xsl:with-param> 
+                        <xsl:with-param name="nomAuteur">Verne</xsl:with-param> 
                     </xsl:call-template>
                 <!--/xsl:for-each -->
             </body>
@@ -51,9 +51,7 @@
                     <h3>Photo</h3>
                     <img>
                         <xsl:attribute name="src"><xsl:value-of select="//auteur[@ident=$idAuteur]/photo"/></xsl:attribute>
-                        <xsl:attribute name="alt">photo de 
-                            <xsl:value-of select="//auteur[@ident=$idAuteur]/prenom"/> 
-                            <xsl:value-of select="//auteur[@ident=$idAuteur]/nom"/>
+                        <xsl:attribute name="alt">photo de <xsl:value-of select="//auteur[@ident=$idAuteur]/prenom"/>   <xsl:value-of select="//auteur[@ident=$idAuteur]/nom"/>
                         </xsl:attribute>
                     </img>
                     
@@ -166,9 +164,7 @@
                         <h3>Photo</h3>
                         <img>
                             <xsl:attribute name="src"><xsl:value-of select="photo"/></xsl:attribute>
-                            <xsl:attribute name="alt">photo de 
-                                <xsl:value-of select="prenom"/> 
-                                <xsl:value-of select="nom"/>
+                            <xsl:attribute name="alt">photo de <xsl:value-of select="prenom"/>  <xsl:value-of select="nom"/>
                             </xsl:attribute>
                         </img>
                         
