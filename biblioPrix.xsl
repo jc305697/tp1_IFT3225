@@ -77,7 +77,7 @@
                             <td>
                                 <xsl:value-of select="$prixLiv"/>
                                 <xsl:if test="boolean(prix/@monnaie)">
-                                    
+                                    &#160;
                                     <xsl:value-of select="prix/@monnaie"/>
                                 </xsl:if>
                             </td>
@@ -88,7 +88,7 @@
                                         <xsl:if test="contains($valAuteurs,@ident)">
                                             <li>
                                                 <xsl:value-of select="prenom"/>
-                                                
+                                                &#160;
                                                 <xsl:value-of select="nom"/>
                                             </li>
                                         </xsl:if>
@@ -104,10 +104,7 @@
                                         <xsl:attribute name="src">
                                             <xsl:value-of select="couverture"/>
                                         </xsl:attribute>
-                                        <xsl:attribute name="alt">
-                                            page couverture de
-                                            <xsl:value-of select="titre"/>
-                                        </xsl:attribute>
+                                        <xsl:attribute name="alt">page couverture de <xsl:value-of select="titre"/></xsl:attribute>
                                     </img>
                                 </xsl:if>
                             </td>

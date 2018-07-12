@@ -117,7 +117,7 @@
                                           <ul>
                                               <xsl:for-each select="/bibliotheque/auteur">
                                                   <xsl:if test="contains($valAuteurs,@ident)">
-                                                      <li><xsl:value-of select="prenom"/> <xsl:value-of select="nom"/></li>
+                                                      <li><xsl:value-of select="prenom"/> &#160; <xsl:value-of select="nom"/></li>
                                                   </xsl:if>
                                               </xsl:for-each>
                                           </ul>    
@@ -217,7 +217,7 @@
                                              <ul>
                                                  <xsl:for-each select="/bibliotheque/auteur">
                                                      <xsl:if test="contains($valAuteurs,@ident)">
-                                                         <li><xsl:value-of select="prenom"/> <xsl:value-of select="nom"/></li>
+                                                         <li><xsl:value-of select="prenom"/> &#160; <xsl:value-of select="nom"/></li>
                                                      </xsl:if>
                                                  </xsl:for-each>
                                              </ul>    
