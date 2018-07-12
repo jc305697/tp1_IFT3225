@@ -22,8 +22,8 @@
                     
                 </p> -->
                 <xsl:call-template name="tri_auteur">
-                    <xsl:with-param name="prixMin">0</xsl:with-param> 
-                    <xsl:with-param name="prixMax">50</xsl:with-param>
+                    <xsl:with-param name="prixMin">10</xsl:with-param> 
+                    <xsl:with-param name="prixMax"></xsl:with-param>
                 </xsl:call-template>
                 <!--/xsl:for-each -->
             </body>
@@ -31,17 +31,20 @@
     </xsl:template> 
     
     <xsl:template name="tri_auteur">
-        <xsl:param name="prixMin" select="-5"/>
-        <xsl:param name="prixMax" select="-5"/>
+        <xsl:param name="prixMin"/>
+        <xsl:param name="prixMax"/>
         
-        <xsl:if test="$prixMin>$prixMax">
+        <xsl:variable name="min"><xsl:value-of select="normalize-space($prixMin)"/></xsl:variable>
+        <xsl:variable name="max"><xsl:value-of select="normalize-space($prixMax)"/></xsl:variable>
+        
+        <xsl:if test="$min>$max">
             <xsl:call-template name="tri_auteur">
-                <xsl:with-param name="prixMin"><xsl:value-of select="$prixMax"/></xsl:with-param>
-                <xsl:with-param name="prixMax"><xsl:value-of select="$prixMin"/></xsl:with-param>
+                <xsl:with-param name="prixMin"><xsl:value-of select="$max"/></xsl:with-param>
+                <xsl:with-param name="prixMax"><xsl:value-of select="$min"/></xsl:with-param>
             </xsl:call-template>
         </xsl:if>
         
-        <xsl:if test="$prixMin &lt;=$prixMax">
+        <xsl:if test="($min &lt;=$max) or  ($min= '') or ($max= '')">
             <!--  <xsl:for-each select="idref($idAuteur)">
                     <p>
                         <xsl:value-of select="titre"/>
@@ -63,46 +66,24 @@
                         <xsl:for-each select="/bibliotheque/livre">
                             <xsl:sort select="//(auteur[@ident=substring-before(current()/@auteurs,' ') or (not(contains(current()/@auteurs,' ')) and normalize-space(@ident)=normalize-space(current()/@auteurs))])/nom" data-type="text" order="descending" />
                             <xsl:variable name="valAuteurs"><xsl:value-of select="@auteurs"/></xsl:variable>
+                            
                             <xsl:variable name="prixLiv">
                                 <xsl:value-of select="number(prix)"/>
                             </xsl:variable>
-                            <xsl:variable name="titre">
-                                <xsl:value-of select="titre"/>
-                            </xsl:variable>
-                            <xsl:variable name="annee">
-                                <xsl:value-of select="annee"/>
-                            </xsl:variable>
-                            
-                            <xsl:variable name="testMonnaie">
-                                <xsl:value-of select="boolean(prix/@monnaie)"/>
-                            </xsl:variable>
-                            
-                            <xsl:variable name="monnaie">
-                                <xsl:value-of select="prix/@monnaie"/>
-                            </xsl:variable>
-                            
-                            
-                            <!-- <xsl:variable name="test">
-                                  <xsl:value-of select="contains(@auteurs,$idAuteur)"/>
-                              </xsl:variable> -->
-                             
-                      
-                            <!--p>
-                                nom de l'auteur est <xsl:value-of select="//(auteur[@ident=substring-before(@auteurs,' ')]/nom)"/>
-                            </p-->
-                            
-                            <xsl:if test="$prixMin &lt;= $prixLiv and $prixLiv &lt; $prixMax">
+                         
+                            <xsl:if test="($min &lt;= $prixLiv and $prixLiv &lt;= $max) or (string-length($min)= 0 and $prixLiv &lt;= $max) or ($min
+                                &lt;= $prixLiv and string-length($max)= 0) or (string-length($min)= 0 and string-length($max)= 0)">
                                 <tr>
                                     <td>
-                                        <xsl:value-of select="$titre"/>
+                                        <xsl:value-of select="titre"/>
                                     </td>
                                     <td>
-                                        <xsl:value-of select="$annee"/>
+                                        <xsl:value-of select="annee"/>
                                     </td>
                                     <td>
                                         <xsl:value-of select="$prixLiv"/> 
-                                        <xsl:if test="$testMonnaie">
-                                            &#160;<xsl:value-of select="$monnaie"/>
+                                        <xsl:if test="boolean(prix/@monnaie)">
+                                            &#160;<xsl:value-of select="prix/@monnaie"/>
                                         </xsl:if>
                                     </td>
                                     
@@ -127,7 +108,7 @@
                                                 <xsl:attribute name="src">
                                                     <xsl:value-of select="couverture"/>
                                                 </xsl:attribute>
-                                                <xsl:attribute name="alt">page couverture de <xsl:value-of select="$titre"/>
+                                                <xsl:attribute name="alt">page couverture de <xsl:value-of select="titre"/>
                                                 </xsl:attribute>
                                             </img>
                                         </xsl:if>
